@@ -1,0 +1,35 @@
+.swiper {
+    /* display: flex !important; */
+    /* justify-content: space-evenly !important; */
+    width: 100%;
+}
+
+/* .swiper.swiper-initialized.swiper-horizontal.mySwiper {
+    display: flex !important;
+    justify-content: space-evenly !important;
+} */
+
+/* .swiper-wrapper{
+    width: 100%;
+} */
+
+.swiper-slide,
+.swiper-slide-prev {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 150px;
+    width: 250px !important;
+}
+
+.swiper-button-prev::after {
+    content: url('/img/icons8-divisa-circulada-à-esquerda-48.png');
+}
+
+.swiper-button-next::after {
+    content: url('/img/icons8-divisa-circulada-à-direita-48.png');
+}
+
+.swiper-slide-active {
+    height: 180px;
+    width: 200px;
+}

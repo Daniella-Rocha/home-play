@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    background: #141414!important;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: #000;
+    word-wrap: break-word;
+
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 20px;
+    border: 1.2px solid #7902a5;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #7902a5;
+}

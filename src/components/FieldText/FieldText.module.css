@@ -1,0 +1,22 @@
+.fieldText_container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.fieldText_container label{
+    width: 80%;
+}
+
+.fieldText_container input{
+    background: #e3e3e3;
+    border: none;
+    border-radius: 4px;
+    color: #535353;
+    outline: none;
+    padding: 0.5rem;
+    width: 100%;
+}

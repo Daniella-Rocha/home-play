@@ -1,0 +1,195 @@
+.container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.parallax1,
+.parallax2,
+.parallax3 {
+    background-attachment: fixed;
+    background-image: url('/img/wallpaper1.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh !important;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.parallax1 {
+    animation: animate ease 16s infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        background-image: url(/img/wallpaper1.jpg);
+    }
+
+    30% {
+        background-image: url(/img/wallpaper2.jpg);
+    }
+
+    75% {
+        background-image: url(/img/wallpaper7.jpeg);
+    }
+}
+
+.parallax2 {
+    background-image: url('/img/wallpaper5.jpg');
+}
+
+.parallax3 {
+    background-image: url('/img/wallpaper6.jpg');
+}
+
+.parallax1 h1,
+.parallax2 h1,
+.parallax3 h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.parallax1 p,
+.parallax2 p,
+.parallax3 p {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.parallax1 div:first-child {
+    display: block;
+    margin: 1rem;
+}
+
+.parallax1 div {
+    display: flex;
+    margin: 1rem;
+}
+
+.plans {
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    justify-content: center;
+    width: 100%;
+}
+
+.plans div h1 {
+    color: #fff;
+    text-align: center;
+}
+
+.plans table {
+    background: #0d0d0d;
+    border-collapse: collapse;
+    margin: 1rem auto 1rem auto;
+    width: 90%;
+}
+
+.plans table thead {
+    background: #141414;
+    border: 1px solid #4c4c4c;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 4.45rem;
+    padding: 0.5rem;
+    width: 80%;
+}
+
+.plans table tbody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.plans table tbody tr {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-size: 0.5rem;
+    justify-content: space-around;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.plans table tbody tr th {
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    width: 15%;
+}
+
+.plans table tbody tr td {
+    align-items: center;
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    width: 15%;
+}
+
+.plans table tbody tr td:last-child {
+    margin-bottom: 0.2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .plans table thead {
+        margin-left: 6.35rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .parallax1 h1,
+    .parallax2 h1,
+    .parallax3 h1 {
+        color: #fff;
+        font-size: 2.8rem;
+        margin-bottom: 0;
+    }
+
+    .parallax1 p,
+    .parallax2 p,
+    .parallax3 p {
+        color: #fff;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    .plans table thead {
+        margin-left: 7.65rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .plans table thead {
+        margin-left: 7.65rem;
+    }
+
+    .plans table tbody tr td {
+        width: 28%;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .plans table thead {
+        margin-left: 10.25rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .plans table thead {
+        margin-left: 12rem;
+    }
+}

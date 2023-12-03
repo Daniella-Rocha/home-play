@@ -1,0 +1,20 @@
+.btn_default {
+    background: #8202c2;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.6rem 0.8rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all ease 400ms;
+    width: 160px;
+}
+
+.btn_default:hover {
+    background: #4f016b;
+}
+
+@media screen and (min-width:1366px){
+    .btn_default{
+        width: 320px;
+    }
+}

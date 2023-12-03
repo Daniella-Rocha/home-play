@@ -1,0 +1,10 @@
+
+.slide_menu{
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+}
+
+.slide_menu img{
+    height: 200px;
+}

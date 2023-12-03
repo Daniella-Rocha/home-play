@@ -1,0 +1,42 @@
+.movie_banner{
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 65vh;
+    width: 100%;
+}
+
+.banner_content{
+    height: 100%;
+    margin-left: 1rem;
+    padding: 1rem;
+}
+
+.banner_content h1{
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    text-shadow: 2px 2px 4.6px #333333;
+}
+
+.btn_links{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.6rem;
+}
+
+.overview {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    max-width: 80ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
