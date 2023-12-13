@@ -3,10 +3,10 @@
 Aqui você pode assistir aos seus filmes favoritos, ainda mergulhar em um mundo de novidades, com a imensa gama de títulos, para nunca enjoar e sempre ter uma aventura emocionante para se divertir nos fins de semana.
 
 ## Tecnologias utilizadas:
-React com javascript
-react router
-axios para requisições http
-react bootstrap para estilização e criação de componentes
+React com javascript,
+react router,
+axios para requisições http,
+react bootstrap para estilização e criação de componentes.
 
 
 #### Projeto criado usando React + Vite
