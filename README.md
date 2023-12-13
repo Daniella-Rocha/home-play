@@ -2,7 +2,14 @@
 ### Uma aplicação de serviço de streaming de filmes. 
 Aqui você pode assistir aos seus filmes favoritos, ainda mergulhar em um mundo de novidades, com a imensa gama de títulos, para nunca enjoar e sempre ter uma aventura emocionante para se divertir nos fins de semana.
 
-# Projeto criado usando React + Vite
+## Tecnologias utilizadas:
+React com javascript
+react router
+axios para requisições http
+react bootstrap para estilização e criação de componentes
+
+
+#### Projeto criado usando React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
