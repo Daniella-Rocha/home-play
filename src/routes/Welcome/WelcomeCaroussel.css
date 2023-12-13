@@ -1,0 +1,31 @@
+.parallax1 {
+    height: 100vh;
+    width: 100%;
+}
+
+.carousel-slide {
+    display: flex;
+}
+
+.carousel-inner {
+    height: 80vh;
+    width: 100%;
+}
+
+.carousel-item{
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-caption{
+    backdrop-filter: brightness(90%);
+}
+
+.carousel-caption h1,p{
+    color: #fff;
+    text-shadow: 2px 2px 4px #202020;
+}
+
+.carousel-indicators {
+    display: none;
+}

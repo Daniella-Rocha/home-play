@@ -8,7 +8,7 @@ import HomeBanner from '../../components/HomeBanner/HomeBanner';
 
 import Section from '../../components/Section/Section';
 
-import useTdmdData from '../../hooks/useTdmdData';
+import useTmdbData from '../../hooks/useTmdbData';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -16,11 +16,11 @@ import styles from './Home.module.css';
 
 const Home = () => {
 
-  const nowPlaying = useTdmdData(`/now_playing?api_key=${apiKey}&language=pt-BR`);
+  const nowPlaying = useTmdbData(`/now_playing?api_key=${apiKey}&language=pt-BR`);
 
-  const popular = useTdmdData(`/popular?api_key=${apiKey}&language=pt-BR`);
+  const popular = useTmdbData(`/popular?api_key=${apiKey}&language=pt-BR`);
 
-  const topRated = useTdmdData(`/top_rated?api_key=${apiKey}&language=pt-BR`);
+  const topRated = useTmdbData(`/top_rated?api_key=${apiKey}&language=pt-BR`);
 
   return (
     <div className={styles.home_container}>

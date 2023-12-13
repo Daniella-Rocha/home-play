@@ -1,0 +1,65 @@
+.movie_banner{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 5rem);
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.movie_info{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    padding: 1rem;
+    width: 100%;
+}
+
+.title{
+    color: #f1f1f1;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4.6px #2f2f2f;
+}
+
+.overview{
+    height: 60%;
+    margin-bottom: 1rem;
+}
+
+.overview button[type="button"]{
+    background-color: #a2a2a2;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0.25rem;
+    width: 190px;
+}
+
+.sinopse{
+    backdrop-filter: brightness(50%);
+    color: #f1f1f1;
+    display: none;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    padding: 0.6rem;
+    transition: all ease 500ms;
+}
+
+.visible{
+    display: flex;
+}
+
+.trailers{
+    display: block;
+    height: 60%;
+    padding: 1rem;
+}
+
+.trailers h2{
+    color: #f1f1f1;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4.6px #2f2f2f;
+}

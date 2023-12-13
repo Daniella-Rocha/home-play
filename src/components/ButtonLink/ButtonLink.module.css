@@ -1,5 +1,4 @@
 .btnDefault{
-    border: 1px solid #fff;
     color: #fff;
     padding: 0.8rem 1rem;
     text-align: center;
@@ -7,10 +6,6 @@
     transition: all ease 400ms;
     width: 320px;
 }
-
-/* .btnDefault:hover{
-    background: rgba(0, 0, 0, .6);
-} */
 
 .btn_assinante{
     background: transparent;

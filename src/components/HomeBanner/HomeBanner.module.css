@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    height: 65vh;
+    height: 50vh;
     width: 100%;
 }
 
@@ -39,4 +39,10 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+
+@media only screen and (min-width: 768px){
+    .movie_banner{
+        height: 78vh;
+    }
 }

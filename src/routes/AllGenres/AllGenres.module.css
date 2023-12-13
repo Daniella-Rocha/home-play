@@ -1,0 +1,10 @@
+.all_container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.all_container h3{
+    color: #fff;
+    text-align: center;
+}

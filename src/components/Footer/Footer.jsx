@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './Footer.module.css';
 
-import Title from '/img/home-play (2).png';
+import Title from '/img/novo-logo2.png';
 
 const Footer = () => {
     return (

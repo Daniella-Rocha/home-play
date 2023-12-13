@@ -5,33 +5,28 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-// import { FaArrowAltCircleLeft } from "react-icons/fa";
-
-// import { FaArrowAltCircleRight } from "react-icons/fa";
-
-// import styles from './Carousel.module.css';
 import './carousel.css';
 
-const CarouselSlides = ({ movieList, index }) => {
+import SlideItem from '../SlideItem/SlideItem';
+
+const CarouselSlides = ({ movieList }) => {
     return (
         <Swiper
             spaceBetween={30}
-            slidesPerView={3}
+            slidesPerView={'auto'}
             navigation={true}
             modules={[Navigation]}
+            pagination={{ clickable: true }}
             className="mySwiper"
         >
-            {movieList.map((movie) =>
-
-                <SwiperSlide
-                    style={{
-                        backgroundImage: `url("https://image.tmdb.org/t/p/w300${movie.backdrop_path}")`,
-                    }}
-                    key={movie.id}
-                >
-                </SwiperSlide>
-            )}
-        </Swiper>
+            {movieList.map(
+                (movie) =>
+                    <SwiperSlide key={movie.id}>
+                        <SlideItem key={movie.id} movie={{ ...movie }} />
+                    </SwiperSlide>
+            )
+            }
+        </Swiper >
     )
 
 }

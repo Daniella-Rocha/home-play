@@ -7,10 +7,14 @@ import DefaultPage from './DefaultPage';
 
 import './index.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Welcome from '../src/routes/Welcome/Welcome';
 import Home from '../src/routes/Home/Home';
 import SignIn from './routes/SignIn/SignIn';
 import SignUp from './routes/SignUp/SignUp';
+import Movie from './routes/Movie/Movie';
+import AllGenres from './routes/AllGenres/AllGenres';
 
 const router = createBrowserRouter([
   {
@@ -33,8 +37,12 @@ const router = createBrowserRouter([
         path: '/signup'
       },
       {
-        element: <Home />,
-        path: '/home'
+        element: <Movie/>,
+        path: '/movie/:id'
+      },
+      {
+        element: <AllGenres/>,
+        path: '/all-genres'
       }
     ]
   }

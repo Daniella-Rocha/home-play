@@ -1,40 +1,61 @@
+import { useEffect, useState } from 'react';
+
+import useTmdData from '../../hooks/useTmdbData';
 
 import ButtonLink from '../../components/ButtonLink/ButtonLink';
+
 import { plans } from '../../planos/planos';
 
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 
+import Carousel from 'react-bootstrap/Carousel';
+
 import styles from './Welcome.module.css';
 
+import './WelcomeCaroussel.css';
+
+const apiKey = import.meta.env.VITE_API_KEY;
+
+const urlMovieImg = import.meta.env.VITE_IMG;
+
 const Welcome = () => {
+    const fetchData = useTmdData(`/popular?api_key=${apiKey}&language=pt-BR`);
+
+    const [slides, setSlides] = useState([]);
+
+    useEffect(() => {
+        setSlides(fetchData);
+    }, [fetchData, slides]);
 
     return (
         <div className={styles.container}>
-            <div className={styles.parallax1}>
-                <div>
-                    <h1>Um universo de intretenimento.</h1>
-                    <p>Planos a partir de R$ 5,99 BRL/Mês.</p>
-                    <p>Assine hoje, cancele quando quiser.</p>
-                    <p>Cadastre-se agora e ganhe 15 dias grátis.</p>
-                </div>
-                <div>
-                    <ButtonLink  
-                        border={'1px solid #fff'}
-                        color={'#9b22e5'}
-                        url={'/signup'}
-                    >
-                        Assinar Home Play
-                    </ButtonLink>
-                </div>
-                <div>
-                    <ButtonLink 
-                        border={'1px solid #fff'}
-                        assinante={true}
-                        url={'/signin'}
-                    >
-                        Sou assinante
-                    </ButtonLink>
-                </div>
+            <div className='.parallax1'>
+                <Carousel
+                    style={{ height: '100%' }}
+                >
+                    {slides.map((slide) =>
+                        <Carousel.Item>
+                            <div
+                                style={
+                                    {
+                                        backgroundImage: `url('https://image.tmdb.org/t/p/original${slide.backdrop_path}')`,
+                                        backgroundPosition: 'center',
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundSize: 'cover',
+                                        height: '100%'
+                                    }
+                                }
+                            >
+                                <Carousel.Caption>
+                                    <h1>Um universo de intretenimento.</h1>
+                                    <p>Planos a partir de R$ 5,99 BRL/Mês.</p>
+                                    <p>Assine hoje, cancele quando quiser.</p>
+                                    <p>Cadastre-se agora e ganhe 15 dias grátis.</p>
+                                </Carousel.Caption>
+                            </div>
+                        </Carousel.Item>
+                    )}
+                </Carousel>
             </div>
             <div className={styles.parallax2}>
                 <h1>Baixe séries para assistir offline</h1>
@@ -90,8 +111,8 @@ const Welcome = () => {
                     </table>
                 </div>
             </div>
-            <ScrollToTop/>
-        </div>
+            <ScrollToTop />
+        </div >
     )
 }
 
