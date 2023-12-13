@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.container h2{
+    color: #fff;
+    margin-bottom: 1rem;
+}

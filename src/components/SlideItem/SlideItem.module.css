@@ -1,4 +1,37 @@
-.container_slide{
+.slide_cover {
     display: flex;
-    width: 200px;
+    height: 100%;
+    transition: all 400ms;
+    width: 100%;
+}
+
+.slide_cover img{
+    height: 100%;
+    width: 100%;
+}
+
+.slide_cover:hover > img{
+    display: none;
+}
+
+.slide_menu {
+    align-items: center;
+    background: #e6e6e6;
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    transform: scale(1.35);
+    width: 100%;
+}
+
+.slide_menu div h3 {
+    background-color: rgba(50, 50, 50, .4);
+    color: #fff;
+    font-size: 0.6rem;
+    padding: 0.15rem;
+}
+
+.slide_cover:hover .slide_menu{
+    display: flex;
 }

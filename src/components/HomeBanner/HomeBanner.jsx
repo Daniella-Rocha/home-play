@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useTdmdData from '../../hooks/useTdmdData';
+import useTmdbData from '../../hooks/useTmdbData';
 
 import ButtonLink from '../ButtonLink/ButtonLink';
 
@@ -11,7 +11,8 @@ const apiKey = import.meta.env.VITE_API_KEY;
 const urlMovieImg = import.meta.env.VITE_IMG;
 
 const HomeBanner = () => {
-  const fetchData = useTdmdData(`/popular?api_key=${apiKey}&language=pt-BR`);
+
+  const fetchData = useTmdbData(`/popular?api_key=${apiKey}&language=pt-BR`);
 
   const [selectedRandomMovie, setSelectedRandomMovie] = useState({});
 
@@ -29,7 +30,6 @@ const HomeBanner = () => {
     selectBanner();
   }, [fetchData, selectedRandomMovie]);
 
-
   return (
     <>
       {
@@ -37,7 +37,7 @@ const HomeBanner = () => {
           (
             <div
               className={styles.movie_banner}
-              style={{ backgroundImage: `url(${urlMovieImg}/w1280${backgroundImg})` }}
+              style={{ backgroundImage: `url(${urlMovieImg}/original${backgroundImg})` }}
             >
               <div className={styles.banner_content}>
                 <h1>{selectedRandomMovie.title}</h1>
@@ -53,7 +53,7 @@ const HomeBanner = () => {
                     <ButtonLink
                       bdRadius={'5px'}
                       bgColor={'#43079d'}
-                      url={'/'}
+                      url={`/movie/${selectedRandomMovie.id}`}
                     >
                       Play
                     </ButtonLink>
@@ -62,7 +62,7 @@ const HomeBanner = () => {
                     <ButtonLink
                       bdRadius={'5px'}
                       bgColor={'#43079d'}
-                      url={'/'}
+                      to={`/movie/${selectedRandomMovie.id}`}
                     >
                       My List
                     </ButtonLink>

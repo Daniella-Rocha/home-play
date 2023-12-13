@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 
 import styles from './ButtonLink.module.css';
 
-const ButtonLink = ({ children, url, size, bdRadius, bgColor, assinante = false }) => {
+const ButtonLink = ({ children, url, size, bdRadius, bgColor, border, assinante = false }) => {
 
   let style = {
     background: bgColor,
     borderRadius: bdRadius,
+    border: border
   }
 
   return (

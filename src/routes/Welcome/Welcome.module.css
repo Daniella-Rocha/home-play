@@ -3,17 +3,16 @@
     width: 100%;
 }
 
-.parallax1,
 .parallax2,
 .parallax3 {
     background-attachment: fixed;
-    background-image: url('/img/wallpaper1.jpg');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh !important;
+    justify-content: center;
     padding: 1rem;
     position: relative;
     overflow: hidden;
@@ -24,21 +23,21 @@
     animation: animate ease 16s infinite;
 }
 
-@keyframes animate {
+/* @keyframes animate {
 
     0%,
     100% {
         background-image: url(/img/wallpaper1.jpg);
     }
 
-    30% {
+    40% {
         background-image: url(/img/wallpaper2.jpg);
     }
 
-    75% {
+    70% {
         background-image: url(/img/wallpaper7.jpeg);
     }
-}
+} */
 
 .parallax2 {
     background-image: url('/img/wallpaper5.jpg');
