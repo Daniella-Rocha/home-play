@@ -37,11 +37,13 @@
 
 @media screen and (min-width: 1366px){
     .signin{
-        height: 75vh;
+        height: 100vh;
+        padding: 1rem;
     }
     
     .signin .box_login{
-        height: 85%;
-        width: 40%;
+        height: 100%;
+        padding: 1rem;
+        width: 50%;
     }
 }
