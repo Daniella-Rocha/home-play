@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 
 import useTmdData from '../../hooks/useTmdbData';
 
-import ButtonLink from '../../components/ButtonLink/ButtonLink';
-
 import { plans } from '../../planos/planos';
 
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
@@ -58,12 +56,12 @@ const Welcome = () => {
                 </Carousel>
             </div>
             <div className={styles.parallax2}>
-                <h1>Baixe séries para assistir offline</h1>
+                <h1>Baixe filmes para assistir offline</h1>
                 <p>Assista em um avião, trem ou submarino...</p>
             </div>
             <div className={styles.parallax3}>
-                <h1>FILMES E SÉRIES IMPERDÍVEIS</h1>
-                <p>Assista a quantos filmes e séries quiser no celular, tablet, laptop e TV.</p>
+                <h1>FILMES IMPERDÍVEIS</h1>
+                <p>Assista a quantos filmes quiser no celular, tablet, laptop e TV.</p>
             </div>
             <div className={styles.plans}>
                 <div>
