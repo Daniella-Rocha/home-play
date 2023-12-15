@@ -1,0 +1,28 @@
+form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.mb-3{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0.6rem!important;
+    width: 100%;
+}
+
+.form-label{
+    color: #fff;
+}
+
+.form-control{
+    padding: 0.5rem;
+    width: 80%;
+}
+
+.error{
+    color: #f60a0a;
+    font-size: 1rem;
+}
