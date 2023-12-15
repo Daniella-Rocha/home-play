@@ -4,7 +4,7 @@ import styles from './ButtonLink.module.css';
 
 const ButtonLink = ({ children, url, size, bdRadius, bgColor, border, assinante = false }) => {
 
-  let style = {
+  const style = {
     background: bgColor,
     borderRadius: bdRadius,
     border: border
