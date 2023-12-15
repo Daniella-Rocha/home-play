@@ -28,21 +28,21 @@
     width: 80%;
 }
 
-.signup form {
-    height: 80%;
+.signup form{
+    height: 100%;
     margin-top: 0.8rem;
     text-align: center;
     width: 100%;
 }
 
-
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1005px) {
     .signup {
-        height: 80vh;
+        height: 100vh;
     }
 
-    .signin .box_signup {
+    .signup .box_signup {
         height: 100%;
-        width: 35%;
+        padding: 1rem;
+        width: 60%;
     }
 }
