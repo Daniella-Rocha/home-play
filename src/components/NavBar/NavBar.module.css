@@ -101,23 +101,20 @@
 
 
 @media only screen and (min-width: 1005px) {
-    .container {
-        height: 5rem;
-        justify-content: space-evenly;
-        padding: 0.6rem;
-    }
-
     .title_container img {
         width: 250px;
     }
 
     .container_nav {
+        align-items: center;
         display: flex;
         height: 5rem;
         justify-content: space-between;
+        flex-direction: row;
         padding: 1rem;
         position: relative;
-        transform: translate(2%, 0);
+        transform: translate(0, 0);
+        width: 100vw;
         z-index: 1;
     }
     .container_nav .user_tools {
@@ -190,5 +187,13 @@
 
     .dropdown_menu_visible {
         display: flex;
+    }
+    
+    .btns{
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+        height: 100%;
+        width: 30%;
     }
 }
