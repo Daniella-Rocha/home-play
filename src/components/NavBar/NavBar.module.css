@@ -1,15 +1,26 @@
-.container {
+.container_welcome {
     align-items: center;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
+    height: 5rem;
     justify-content: space-between;
-    padding: 1rem;
     position: relative;
-    width: 100%;
+    width: 100vw;
+}
+
+.container{
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    position: relative;
+    width: 100vw;
 }
 
 .title_container {
-    width: 30%;
+    width: 35%;
 }
 
 .title_container a img {
@@ -24,13 +35,13 @@
     width: 100%;
 }
 
-.user_tools form input{
+.user_tools form input {
     outline: none;
 }
 
 .container_nav {
     background: rgba(0, 0, 0, 0.8);
-    display: none;
+    display: flex;
     height: 100%;
     flex-direction: column;
     justify-content: space-evenly;
@@ -38,13 +49,29 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: 80vw;
+    width: 85vw;
     z-index: 9;
+}
+
+.container_nav_welcome {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+}
+
+.btns {
+    width: 60%;
+}
+
+.btns a{
+    margin-left: 0.2rem;
 }
 
 .reponsive_nav {
     display: flex;
-    transform: translate(2%, 0);
+    transform: translate(100%, 0);
     transition: all 100ms ease-in;
 }
 
@@ -67,13 +94,9 @@
     width: 100%;
 }
 
-.container_nav .user_menu{
+.container_nav .user_menu {
     display: flex;
     justify-content: center;
-    width: 100%;
-}
-
-.container_nav .user_tools .options {
     width: 100%;
 }
 
@@ -81,6 +104,11 @@
     display: none;
 }
 
+.options button {
+    background: none;
+    border: none;
+    color: #fff;
+}
 
 .container_nav .user_tools li {
     list-style: none;
@@ -90,7 +118,7 @@
 
 .container_nav .user_tools ul li a {
     color: #fff;
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-decoration: none;
 }
 
@@ -101,7 +129,8 @@
 
 
 @media only screen and (min-width: 1005px) {
-    .title_container img {
+    .title_container a img {
+        height: 80px;
         width: 250px;
     }
 
@@ -109,14 +138,20 @@
         align-items: center;
         display: flex;
         height: 5rem;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-direction: row;
-        padding: 1rem;
+        padding: 0;
         position: relative;
         transform: translate(0, 0);
-        width: 100vw;
+        width: 100%;
         z-index: 1;
     }
+    
+    .container_nav_welcome{
+        justify-content: space-between;
+        width: 100%;
+    }
+
     .container_nav .user_tools {
         align-items: center;
         display: flex;
@@ -126,14 +161,19 @@
         width: 100%;
     }
 
-    .user_tools .options{
-        display: flex;
-        gap: 0.6rem;
-        width: 100px;
+    .user_tools form {
+        flex-direction: row;
+        margin: 0;
     }
 
-    .user_tools ul li a {
-        font-size: 0.65rem;
+    .user_tools .options {
+        display: flex;
+        width: 250px;
+    }
+
+    .user_tools .options li {
+        margin-bottom: 0;
+        width: 200px;
     }
 
     .user_menu {
@@ -141,18 +181,18 @@
         flex-direction: column;
         width: 50%;
     }
-    
-    .container_nav .user_menu>:first-child{
+
+    .container_nav .user_menu>:first-child {
         display: flex;
         justify-content: center;
     }
-    
+
     .container_nav .user_menu img {
         cursor: pointer;
         display: block;
     }
 
-    .dropdown_menu{
+    .dropdown_menu {
         background-color: rgba(24, 24, 24, 0.85);
         display: flex;
         padding: 1rem;
@@ -160,15 +200,15 @@
         top: 120px;
         z-index: 9;
     }
-    
-    .dropdown_menu.active{
+
+    .dropdown_menu.active {
         opacity: 1;
         transform: translateY(0);
         transition: all 500ms ease-in;
         visibility: visible;
     }
-    
-    .dropdown_menu.inactive{
+
+    .dropdown_menu.inactive {
         opacity: 0;
         visibility: hidden;
     }
@@ -188,8 +228,8 @@
     .dropdown_menu_visible {
         display: flex;
     }
-    
-    .btns{
+
+    .btns {
         align-items: center;
         display: flex;
         gap: 1rem;
