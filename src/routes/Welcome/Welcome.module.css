@@ -19,26 +19,6 @@
     width: 100%;
 }
 
-.parallax1 {
-    animation: animate ease 16s infinite;
-}
-
-/* @keyframes animate {
-
-    0%,
-    100% {
-        background-image: url(/img/wallpaper1.jpg);
-    }
-
-    40% {
-        background-image: url(/img/wallpaper2.jpg);
-    }
-
-    70% {
-        background-image: url(/img/wallpaper7.jpeg);
-    }
-} */
-
 .parallax2 {
     background-image: url('/img/wallpaper5.jpg');
 }
