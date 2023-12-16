@@ -13,7 +13,11 @@ const useVerificaCadastro = () => {
     const navigate = useNavigate();
 
     const isUserSignedUp = async (route) => {
-        
+        const userData = localStorage.getItem('signup');
+        setJsonSignUp(JSON.parse(userData));
+        if ((jsonSingUp.email === login.email) && (jsonSingUp.password === login.password)) {
+            navigate(route);
+        }
     }
 
     return {
