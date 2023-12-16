@@ -2,17 +2,15 @@ import { useState } from 'react';
 
 import { Link, useLocation, useParams } from 'react-router-dom';
 
-import useVerificaCadastro from '../../hooks/useVerificaCadastro';
-
 import { TiThMenuOutline } from "react-icons/ti";
 
 import { FaWindowClose } from "react-icons/fa";
 
 import DropDownItem from '../DropDownItem/DropDownItem';
 
-import ButtonLink from '../../components/ButtonLink/ButtonLink';
+import ButtonLink from '../ButtonLink/ButtonLink';
 
-import Title from '/img/novo-logo2.png';
+import Logo from '/img/home-play (2).png';
 
 import Loupe from '/img/loupe.png';
 
@@ -22,11 +20,9 @@ import styles from './NavBar.module.css';
 
 
 const NavBar = () => {
-  const [isNavVisible, setIsNavVisible] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(true);
 
   const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
-
-  const { isUserSignedUp } = useVerificaCadastro();
 
   const path = useLocation();
 
@@ -47,28 +43,30 @@ const NavBar = () => {
         || path.pathname == '/signup'
       )
       &&
-      < nav className={styles.container_nav} >
-        <div className={styles.title_container}>
-          <Link to={'/'}>
-            <img src={Title} alt="imagem escrito home play, a qual se refere ao logo da aplicação" />
-          </Link>
-        </div>
-        <div className={styles.btns}>
-          <ButtonLink
-            assinante={true}
-            bdRadius={'5px'}
-            url={'/signin'}
-          >
-            Sou Assinante
-          </ButtonLink>
-          <ButtonLink
-            bdRadius={'5px'}
-            url={'/signup'}
-          >
-            Assinar
-          </ButtonLink>
-        </div>
-      </nav >
+      <header className={styles.container_welcome}>
+        < nav className={styles.container_nav_welcome} >
+          <div className={styles.title_container}>
+            <Link to={'/'}>
+              <img src={Logo} alt="imagem escrito home play, a qual se refere ao logo da aplicação" />
+            </Link>
+          </div>
+          <div className={styles.btns}>
+            <ButtonLink
+              assinante={true}
+              bdRadius={'5px'}
+              url={'/signin'}
+            >
+              Sou Assinante
+            </ButtonLink>
+            <ButtonLink
+              bdRadius={'5px'}
+              url={'/signup'}
+            >
+              Assinar
+            </ButtonLink>
+          </div>
+        </nav >
+      </header>
     )
     ||
     (
@@ -80,7 +78,7 @@ const NavBar = () => {
       <header className={styles.container}>
         <div className={styles.title_container}>
           <Link to={'/home'}>
-            <img src={Title} alt="imagem escrito home play, a qual se refere ao logo da aplicação" />
+            <img src={Logo} alt="imagem escrito home play, a qual se refere ao logo da aplicação" />
           </Link>
         </div>
         <nav className={`
@@ -108,16 +106,9 @@ const NavBar = () => {
             </form>
             <ul className={styles.options}>
               <li>
-                {/* <Link
-                  to={'/all-genres'}
-                >
-                  Todos os Gêneros
-                </Link> */}
-                <button 
-                  onClick={() => isUserSignedUp('/all-genres')}
-                >
-                  Todos os Gêneros
-                </button>
+                <Link to={'/all-genres'}>
+                  Todos os gêneros
+                </Link>
               </li>
             </ul>
             <div className={styles.user_menu}>
