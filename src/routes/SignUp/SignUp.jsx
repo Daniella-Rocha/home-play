@@ -15,13 +15,9 @@ const SignUp = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = async (data) => {
-    setSignUp({
-      name: data.name,
-      email: data.email,
-      password: data.password
-    });
-    signUpUser();
+  const onSubmit = (data) => {
+    signUpUser(data);
+    console.log(signUp);
   };
 
   return (
