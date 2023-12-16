@@ -27,7 +27,7 @@ const Welcome = () => {
 
     return (
         <div className={styles.container}>
-            <div className='.parallax1'>
+            <div className='parallax1'>
                 <Carousel
                     style={{ height: '100%' }}
                 >
