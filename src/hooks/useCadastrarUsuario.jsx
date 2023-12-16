@@ -15,13 +15,16 @@ const useCadastrarUsuario = () => {
 
     // }
 
-    const signUpUser = async () => {
+    const signUpUser = async (data) => {
+        setSignUp({
+            name: data.name,
+            email: data.email,
+            password: data.password
+        });
 
         localStorage.setItem('signup', JSON.stringify(signUp));
 
-        // navigate('/home');
-
-        console.log(signUp);
+        navigate('/home');
     }
 
     return {
