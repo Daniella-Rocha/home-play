@@ -1,8 +1,16 @@
+import { Link } from 'react-router-dom';
+
 import styles from './DropDownItem.module.css';
 
-const DropDownItem = ({content}) => {
+const DropDownItem = ({ content, to }) => {
+  
+  console.log(to)
   return (
-    <li className={styles.item}>{content}</li>
+    <li className={styles.item}>
+      <Link to={to}>
+        {content}
+      </Link>
+    </li>
   )
 }
 

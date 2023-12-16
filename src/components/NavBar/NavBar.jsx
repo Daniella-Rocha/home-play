@@ -73,6 +73,7 @@ const NavBar = () => {
       (path.pathname == '/home'
         || path.pathname == `/movie/${id}`
         || path.pathname == '/all-genres'
+        || path.pathname == '/profile'
       )
       &&
       <header className={styles.container}>
@@ -125,7 +126,7 @@ const NavBar = () => {
               `}
               >
                 <ul  >
-                  <DropDownItem content={'Perfil'} />
+                  <DropDownItem content={'Perfil'} to={'/profile'} />
                   <DropDownItem content={'Notificações'} />
                   <DropDownItem content={'Ajuda'} />
                   <DropDownItem content={'Sair'} />

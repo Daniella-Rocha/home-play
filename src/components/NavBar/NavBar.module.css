@@ -198,7 +198,7 @@
         padding: 1rem;
         position: absolute;
         top: 120px;
-        z-index: 9;
+        z-index: 99;
     }
 
     .dropdown_menu.active {

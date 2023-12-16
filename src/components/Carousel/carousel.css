@@ -2,6 +2,7 @@
     align-items: center;
     width: 90%;
     display: flex;
+    z-index: 1;
 }
 
 .swiper-wrapper {

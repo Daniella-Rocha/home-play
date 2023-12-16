@@ -15,6 +15,7 @@ import SignIn from './routes/SignIn/SignIn';
 import SignUp from './routes/SignUp/SignUp';
 import Movie from './routes/Movie/Movie';
 import AllGenres from './routes/AllGenres/AllGenres';
+import Profile from './routes/Profile/Profile';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         element: <AllGenres/>,
         path: '/all-genres'
+      },
+      {
+        element: <Profile/>,
+        path: '/profile'
       }
     ]
   }

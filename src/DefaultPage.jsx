@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom';
 
 
 import NavBar from './components/NavBar/NavBar';
-import NavMobile from './components/NavMobile/NavMobile';
 import Footer from './components/Footer/Footer';
 
 import './DefaultPage.css';
