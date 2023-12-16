@@ -23,15 +23,13 @@
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(13, 7, 16, 0.6);
     display: flex;
-    height: 60%;
+    height: 50vh;
     flex-direction: column;
     width: 90%;
 }
 
 .signin form{
     height: 100%;
-    margin-top: 0.8rem;
-    text-align: center;
     width: 100%;
 }
 
