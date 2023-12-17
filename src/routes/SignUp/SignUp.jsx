@@ -11,13 +11,12 @@ import ButtonSubmit from "../../components/ButtonSubmit/ButtonSubmit";
 import './SignUp.css';
 
 const SignUp = () => {
-  const { signUp, setSignUp, signUpUser } = useCadastrarUsuario();
+  const { signUpUser } = useCadastrarUsuario();
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     signUpUser(data);
-    console.log(signUp);
   };
 
   return (

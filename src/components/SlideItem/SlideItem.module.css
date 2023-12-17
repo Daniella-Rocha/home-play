@@ -35,3 +35,7 @@
 .slide_cover:hover .slide_menu{
     display: flex;
 }
+
+.fav{
+    fill: red;
+}

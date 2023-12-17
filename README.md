@@ -2,6 +2,10 @@
 ### Uma aplicação de serviço de streaming de filmes. 
 Aqui você pode assistir aos seus filmes favoritos, ainda mergulhar em um mundo de novidades, com a imensa gama de títulos, para nunca enjoar e sempre ter uma aventura emocionante para se divertir nos fins de semana.
 
+<img src="/home.png" alt="pagina inicial do home play" />
+<img src="/destaques.png" alt="carrossel de destaques do home play" />
+<img src="/todos-generos.png" alt="todos os generos em home play" />
+
 ## Tecnologias utilizadas:
 React com javascript,
 react router,

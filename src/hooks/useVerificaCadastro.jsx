@@ -8,15 +8,17 @@ const useVerificaCadastro = () => {
 
     const [jsonSingUp, setJsonSignUp] = useState({});
 
-    const [verificaCadastro, setVerificaCadastro] = useState({});
-
     const navigate = useNavigate();
 
-    const isUserSignedUp = async (route) => {
-        const userData = localStorage.getItem('signup');
+    const isUserSignedUp = (route) => {
+        const userData = localStorage.getItem('userData');
+
         setJsonSignUp(JSON.parse(userData));
+
         if ((jsonSingUp.email === login.email) && (jsonSingUp.password === login.password)) {
             navigate(route);
+        } else {
+            navigate('/');
         }
     }
 

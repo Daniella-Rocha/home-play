@@ -1,19 +1,11 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
 const useCadastrarUsuario = () => {
     const navigate = useNavigate();
 
-    // const [token, setToken] = useState('');
-
     const [signUp, setSignUp] = useState({});
-
-    // const generateToken = () =>{
-    //     const caracteresPermitidos = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+';
-
-
-    // }
 
     const signUpUser = async (data) => {
         setSignUp({
@@ -21,15 +13,20 @@ const useCadastrarUsuario = () => {
             email: data.email,
             password: data.password
         });
-
-        localStorage.setItem('signup', JSON.stringify(signUp));
-
-        navigate('/home');
     }
+
+    useEffect(() => {
+        if (Object.keys(signUp).length > 0) {
+            localStorage.setItem('userData', JSON.stringify(signUp));
+        }
+
+        console.log(signUp);
+        
+        navigate('/home');
+    }, [signUp]);
 
     return {
         signUp,
-        setSignUp,
         signUpUser
     }
 }

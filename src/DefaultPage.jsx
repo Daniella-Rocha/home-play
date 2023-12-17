@@ -1,5 +1,8 @@
 import { Outlet } from 'react-router-dom';
 
+import {UserDataContextProvider} from './contexts/userDataContext';
+
+import { UserFavoritesContextProvider } from './contexts/useFavorites';
 
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
@@ -10,7 +13,11 @@ const DefaultPage = () => {
   return (
     <div className='default_page'>
       <NavBar />
-      <Outlet />
+      <UserDataContextProvider>
+        <UserFavoritesContextProvider>
+          <Outlet />
+        </UserFavoritesContextProvider>
+      </UserDataContextProvider>
       <Footer />
     </div>
   )

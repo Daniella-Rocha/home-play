@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import { Link, useLocation, useParams } from 'react-router-dom';
 
+import useVerificaCadastro from '../../hooks/useVerificaCadastro';
+
 import { TiThMenuOutline } from "react-icons/ti";
 
 import { FaWindowClose } from "react-icons/fa";
@@ -23,6 +25,8 @@ const NavBar = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
 
   const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
+  
+  const {isUserSignedUp} = useVerificaCadastro();
 
   const path = useLocation();
 
@@ -107,9 +111,12 @@ const NavBar = () => {
             </form>
             <ul className={styles.options}>
               <li>
-                <Link to={'/all-genres'}>
+                <button
+                  typeof='button'
+                  onClick={() => isUserSignedUp('/all-genres')}
+                >
                   Todos os gêneros
-                </Link>
+                </button>
               </li>
             </ul>
             <div className={styles.user_menu}>
