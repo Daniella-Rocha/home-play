@@ -1,6 +1,10 @@
+import { useState, useContext } from "react";
+
+import { useNavigate } from "react-router-dom";
+
 import { useForm } from "react-hook-form";
 
-import useVerificaCadastro from '../../hooks/useVerificaCadastro';
+import {UserDataContext} from '../../contexts/userDataContext';
 
 import ButtonSubmit from '../../components/ButtonSubmit/ButtonSubmit';
 
@@ -11,17 +15,22 @@ import styles from './SignIn.module.css';
 import './Signin.css';
 
 const SignIn = () => {
+  const data = useContext(UserDataContext);
+  
+  const [userData, setUserData] = useState(data);
 
-  const {isUserSignedUp, setLogin} = useVerificaCadastro();
+  const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = async (data) => {
-    setLogin({
-      email: data.email,
-      password: data.password
-    });
-    isUserSignedUp('/home');
+  const onSubmit = (data) => {
+    if ((data.email === userData.email) && (data.password ===
+      userData.password)) {
+      navigate('/home');
+    }
+    else {
+      console.log('O usuário não existe, ou email e senha estão incorretos');
+    }
   };
 
   return (
