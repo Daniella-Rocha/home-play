@@ -1,16 +1,31 @@
-import { useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
+// import { UserFavoritesContext } from '../../contexts/useFavorites';
+
+import useFavorite from '../../hooks/useFavorites';
+
 import { LuMonitorPlay } from "react-icons/lu";
 
-import styles from './SlideItem.module.css';
+import { FaRegHeart } from "react-icons/fa";
 
+import { FaHeart } from "react-icons/fa6";
+
+import styles from './SlideItem.module.css';
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 const SlideItem = ({ movie }) => {
 
-    const { id, poster_path } = movie;
+    const { title, backdrop_path, id, poster_path } = movie;
+
+    const [isFavMovie, setIsFavMovie] = useState(false);
+
+    const { toggleFavs, favList } = useFavorite();
+
+    const handleFav = (movie) => {
+        toggleFavs(movie);
+    }
 
     useEffect(() => {
     }, [favList]);
