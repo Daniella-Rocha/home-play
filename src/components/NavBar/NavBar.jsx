@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 
-import useVerificaCadastro from '../../hooks/useVerificaCadastro';
+import { UserDataContext } from '../../contexts/userDataContext';
 
 import { TiThMenuOutline } from "react-icons/ti";
 
@@ -20,13 +20,15 @@ import UserAvatar from '/img/user-avatar.png';
 
 import styles from './NavBar.module.css';
 
-
 const NavBar = () => {
+
+  const data = useContext(UserDataContext);
+  
+  const navigate = useNavigate();
+
   const [isNavVisible, setIsNavVisible] = useState(true);
 
   const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
-  
-  const {isUserSignedUp} = useVerificaCadastro();
 
   const path = useLocation();
 
@@ -38,6 +40,14 @@ const NavBar = () => {
 
   const showUserMenu = () => {
     setIsUserMenuVisible(!isUserMenuVisible);
+  }
+
+  const isLoggedIn =  () => {
+    if (data.email && data.password) {
+      navigate('/all-genres');
+    } else{
+      console.log('usuário não cadastrado');
+    }
   }
 
   return (
@@ -113,7 +123,7 @@ const NavBar = () => {
               <li>
                 <button
                   typeof='button'
-                  onClick={() => isUserSignedUp('/all-genres')}
+                  onClick={isLoggedIn}
                 >
                   Todos os gêneros
                 </button>
