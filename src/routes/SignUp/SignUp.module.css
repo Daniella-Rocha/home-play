@@ -3,7 +3,7 @@
     background-color: #240031;
     display: flex;
     flex-direction: column;
-    height: 85vh;
+    height: 100vh;
     justify-content: center;
     width: 100%;
 }
@@ -19,29 +19,29 @@
     align-items: center;
     background-color: rgba(255, 255, 255, 0.13);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba( 200, 200, 200, 0.1);
+    border: 1px solid rgba(200, 200, 200, 0.1);
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(13, 7, 16, 0.6);
     display: flex;
-    height: 80%;
+    height: 100%;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
 }
 
-.signup form{
+.signup form {
     height: 100%;
-    text-align: center;
     width: 100%;
 }
 
 @media screen and (min-width: 1005px) {
     .signup {
         height: 100vh;
+        padding: 1rem;
     }
 
     .signup .box_signup {
         height: 100%;
-        padding: 1rem;
-        width: 60%;
+        padding: 2rem;
+        width: 50%;
     }
 }
