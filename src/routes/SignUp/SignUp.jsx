@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
+
 import { useForm } from "react-hook-form";
 
-import useCadastrarUsuario from '../../hooks/useCadastrarUsuario';
+import { useNavigate } from "react-router-dom";
 
 import styles from './SignUp.module.css';
 
@@ -11,13 +13,26 @@ import ButtonSubmit from "../../components/ButtonSubmit/ButtonSubmit";
 import './SignUp.css';
 
 const SignUp = () => {
-  const { signUpUser } = useCadastrarUsuario();
+  const [signUp, setSignUp] = useState({});
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = async (data) => {
-    signUpUser(data);
+  const navigate = useNavigate();
+
+  const onSubmit = (data) => {
+    setSignUp({
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    });
   };
+
+  useEffect(() => {
+    if (signUp.email && signUp.password && signUp.name) {
+      localStorage.setItem('userData', JSON.stringify(signUp))
+      navigate('/home')
+    }
+  }, [signUp]);
 
   return (
     <div className={styles.signup}>
