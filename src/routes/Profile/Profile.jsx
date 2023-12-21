@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { UserDataContext } from '../../contexts/userDataContext';
 
-// import { UserFavoritesContext } from '../../contexts/useFavorites';
-
 import styles from './Profile.module.css';
 
 const Profile = () => {
