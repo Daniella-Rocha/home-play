@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
+import {UserDataContext} from '../../contexts/userDataContext';
 
 import { requestDataTmdb } from '../../axios/config';
 
@@ -11,6 +13,11 @@ import styles from './Movie.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Movie = () => {
+
+    const data = useContext(UserDataContext);
+
+    const navigate = useNavigate();
+    
     const { id } = useParams();
 
     const [movie, setMovie] = useState({});
@@ -54,75 +61,81 @@ const Movie = () => {
         setSinopseVisible(!sinopseVisible);
     }
 
-    return (
-        movie &&
-        <div
-            className={styles.movie_banner}
-            style={{ backgroundImage: `url('https://image.tmdb.org/t/p/original${movie.backdrop_path}')` }}
-        >
-            <div className={styles.movie_info}>
-                <div className={styles.title}>
-                    <h2>{movie.title}</h2>
-                    <span>Gêneros: </span>
-                        {genresMovie.map((genre) => 
+    if (data.email && data.password) {
+        return (
+            movie &&
+            <div
+                className={styles.movie_banner}
+                style={{ backgroundImage: `url('https://image.tmdb.org/t/p/original${movie.backdrop_path}')` }}
+            >
+                <div className={styles.movie_info}>
+                    <div className={styles.title}>
+                        <h2>{movie.title}</h2>
+                        <span>Gêneros: </span>
+                        {genresMovie.map((genre) =>
                             <span key={genre.id}> {genre.name}</span>
                         )}
-                </div>
-                <div
-                    className={styles.overview}
-                >
-                    <div>
-                        <button
-                            type="button"
-                            onClick={showSinopse}
-                        >
-                            {
-                                sinopseVisible ? 'Esconder sinopse'
-                                    : 'Ver sinopse'
-                            }
-                        </button>
                     </div>
-                    <p
-                        className={
-                            `${styles.sinopse}
-                            ${sinopseVisible ? styles.visible : ''}`
-                        }
+                    <div
+                        className={styles.overview}
                     >
-                        {movie.overview}
-                    </p>
-                </div>
-            </div>
-            <div className={styles.trailers}>
-                <h2>Trailers</h2>
-                <div>
-                    {trailers.length === 0 ?
-                        (
-                            <p>Não encontramos trailers deste filme.</p>
-                        )
-                        :
-                        (
-                            <Swiper>
+                        <div>
+                            <button
+                                type="button"
+                                onClick={showSinopse}
+                            >
                                 {
-                                    trailers.map((trailer) =>
-                                        <SwiperSlide key={trailer.id}>
-                                            <div>
-                                                <iframe
-                                                    src={`https://www.youtube.com/embed/${trailer.key}`}
-                                                    allowFullScreen
-                                                >
-
-                                                </iframe>
-                                            </div>
-                                        </SwiperSlide>
-                                    )
+                                    sinopseVisible ? 'Esconder sinopse'
+                                        : 'Ver sinopse'
                                 }
-                            </Swiper>
-                        )
-                    }
+                            </button>
+                        </div>
+                        <p
+                            className={
+                                `${styles.sinopse}
+                            ${sinopseVisible ? styles.visible : ''}`
+                            }
+                        >
+                            {movie.overview}
+                        </p>
+                    </div>
+                </div>
+                <div className={styles.trailers}>
+                    <h2>Trailers</h2>
+                    <div>
+                        {trailers.length === 0 ?
+                            (
+                                <p>Não encontramos trailers deste filme.</p>
+                            )
+                            :
+                            (
+                                <Swiper>
+                                    {
+                                        trailers.map((trailer) =>
+                                            <SwiperSlide key={trailer.id}>
+                                                <div>
+                                                    <iframe
+                                                        src={`https://www.youtube.com/embed/${trailer.key}`}
+                                                        allowFullScreen
+                                                    >
+
+                                                    </iframe>
+                                                </div>
+                                            </SwiperSlide>
+                                        )
+                                    }
+                                </Swiper>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
+
+    useEffect(() => {
+        navigate('/');
+    }, []);
 }
 
 export default Movie
