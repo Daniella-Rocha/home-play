@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import {UserDataContextProvider} from './contexts/userDataContext';
+import { UserDataContextProvider } from './contexts/userDataContext';
 
 import { UserFavoritesContextProvider } from './contexts/useFavorites';
 
@@ -12,8 +12,8 @@ import './DefaultPage.css';
 const DefaultPage = () => {
   return (
     <div className='default_page'>
-      <NavBar />
       <UserDataContextProvider>
+        <NavBar />
         <UserFavoritesContextProvider>
           <Outlet />
         </UserFavoritesContextProvider>
