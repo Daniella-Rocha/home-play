@@ -11,6 +11,7 @@ React com javascript,
 react router,
 axios para requisições http,
 react bootstrap para estilização e criação de componentes.
+api The movie data base
 
 #### Projeto criado usando React + Vite
 
