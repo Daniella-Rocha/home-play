@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ReactDOM from 'react-dom/client';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -16,6 +17,9 @@ import SignUp from './routes/SignUp/SignUp';
 import Movie from './routes/Movie/Movie';
 import AllGenres from './routes/AllGenres/AllGenres';
 import Profile from './routes/Profile/Profile';
+import NotFound from './routes/NotFound/NotFound';
+
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -26,10 +30,6 @@ const router = createBrowserRouter([
         path: '/'
       },
       {
-        element: <Home />,
-        path: '/home'
-      },
-      {
         element: <SignIn />,
         path: '/signin'
       },
@@ -38,25 +38,34 @@ const router = createBrowserRouter([
         path: '/signup'
       },
       {
-        element: <Movie/>,
+        element: <Home />,
+        path: '/home'
+      },
+      {
+        element:<Movie />,
         path: '/movie/:id'
       },
       {
-        element: <AllGenres/>,
+        element:<AllGenres />,
         path: '/all-genres'
       },
       {
-        element: <Profile/>,
+        element: <Profile />,
         path: '/profile'
+      },
+      {
+        element: <NotFound />,
+        path: '*'
       }
-    ]
+    ],
+    errorElement: <ErrorPage />
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <RouterProvider router={router}>
-        <DefaultPage />
-      </RouterProvider>
+    <RouterProvider router={router}>
+      <DefaultPage />
+    </RouterProvider>
   </React.StrictMode>,
 )
