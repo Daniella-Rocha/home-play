@@ -5,11 +5,7 @@ form{
 }
 
 .mb-3{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
     height: 130px;
-    justify-content: center;
     margin-bottom: 0.5rem!important;
     width: 100%;
 }
