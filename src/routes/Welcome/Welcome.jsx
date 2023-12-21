@@ -14,8 +14,6 @@ import './WelcomeCaroussel.css';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
-const urlMovieImg = import.meta.env.VITE_IMG;
-
 const Welcome = () => {
     const fetchData = useTmdData(`/popular?api_key=${apiKey}&language=pt-BR`);
 
@@ -32,7 +30,9 @@ const Welcome = () => {
                     style={{ height: '100%' }}
                 >
                     {slides.map((slide) =>
-                        <Carousel.Item>
+                        <Carousel.Item
+                        key={slide.id}
+                        >
                             <div
                                 style={
                                     {
