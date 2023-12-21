@@ -11,7 +11,7 @@ const apiKey = import.meta.env.VITE_API_KEY;
 const urlMovieImg = import.meta.env.VITE_IMG;
 
 const HomeBanner = () => {
-
+  
   const fetchData = useTmdbData(`/popular?api_key=${apiKey}&language=pt-BR`);
 
   const [selectedRandomMovie, setSelectedRandomMovie] = useState({});
@@ -19,17 +19,20 @@ const HomeBanner = () => {
   const [backgroundImg, setbackgroundImg] = useState('');
 
   const selectBanner = () => {
+    let randomMovie = 0;
     if (fetchData) {
-      const randomMovie = Math.floor(Math.random() * fetchData.length - 1);
-      setSelectedRandomMovie(fetchData[randomMovie]);
+      randomMovie = Math.floor(Math.random() * fetchData.length - 1);
+
       setbackgroundImg(selectedRandomMovie?.backdrop_path);
     }
+    setSelectedRandomMovie(fetchData[randomMovie]);
   }
+  
 
   useEffect(() => {
     selectBanner();
   }, [fetchData, selectedRandomMovie]);
-
+  
   return (
     <>
       {
@@ -37,7 +40,7 @@ const HomeBanner = () => {
           (
             <div
               className={styles.movie_banner}
-              style={{ backgroundImage: `url(${urlMovieImg}/original${backgroundImg})` }}
+              style={{ backgroundImage: `url(${urlMovieImg}/w500${backgroundImg})` }}
             >
               <div className={styles.banner_content}>
                 <h1>{selectedRandomMovie.title}</h1>
