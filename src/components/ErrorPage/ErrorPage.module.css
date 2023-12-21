@@ -1,0 +1,20 @@
+.error_page{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.error_page h1{
+    color: #fff;
+}
+
+.error_page img{
+    width: 25%;
+}
+
+.error_page a{
+    color: #fff;
+    margin-top: 1rem;
+    text-decoration: none;
+}
