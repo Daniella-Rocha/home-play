@@ -2,7 +2,7 @@
 ### Uma aplicação de serviço de streaming de filmes. 
 Aqui você pode assistir aos seus filmes favoritos, ainda mergulhar em um mundo de novidades, com a imensa gama de títulos, para nunca enjoar e sempre ter uma aventura emocionante para se divertir nos fins de semana.
 
-###### Acesse o [Home Play](home-play.vercel.app)
+###### Acesse o [Home Play]([home-play.vercel.app](https://home-play.vercel.app/))
 
 <img src="public/home.png" alt="pagina inicial do home play" />
 <img src="public/destaques.png" alt="carrossel de destaques do home play" />
