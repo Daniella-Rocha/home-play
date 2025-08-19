@@ -1,16 +1,13 @@
 import { Link } from 'react-router-dom';
-
 import styles from './Footer.module.css';
-
-import Title from '/img/novo-logo2.png';
 
 const Footer = () => {
     return (
-        <div className={styles.footer_container}>
+        <footer className={styles.footer_container}>
             <div className={styles.footer_logo}>
-                <img src={Title} alt="imagem escrito home play, a qual se refere ao logo da aplicação" />
+                <h3>Home Play</h3>
             </div>
-            <div>
+            <div className={styles.footer_links}>
                 <ul>
                     <li>
                         <Link>Quem somos</Link>
@@ -35,7 +32,7 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-        </div>
+        </footer>
     )
 }
 

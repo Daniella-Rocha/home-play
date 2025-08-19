@@ -1,10 +1,12 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 
-import {UserDataContext} from '../../contexts/userDataContext';
+import { Alert } from 'react-bootstrap';
+
+import { UserDataContext } from '../../contexts/userDataContext';
 
 import ButtonSubmit from '../../components/ButtonSubmit/ButtonSubmit';
 
@@ -15,29 +17,51 @@ import styles from './SignIn.module.css';
 import './Signin.css';
 
 const SignIn = () => {
-  const data = useContext(UserDataContext);
-  
-  const [userData, setUserData] = useState(data);
+  const { email, password } = useContext(UserDataContext);
+
+  const [userData, setUserData] = useState({ email, password });
 
   const navigate = useNavigate();
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register,
+    handleSubmit,
+    setError,
+    clearErrors,
+    formState: { errors }
+  } = useForm();
 
   const onSubmit = (data) => {
+
     if ((data.email === userData.email) && (data.password ===
       userData.password)) {
+
       navigate('/home');
+      
+    } else {
+      setError('api', {
+        type: 'manual',
+        message: 'Usuário ou senha incorretos'
+      });
+      return;
+    };
+  }
+
+  useEffect(() => {
+    if (errors.api && (userData.email || userData.password)) {
+      clearErrors('api')
     }
-    else {
-      console.log('O usuário não existe, ou email e senha estão incorretos');
-    }
-  };
+  }, [userData.email, userData.password, errors.api, clearErrors])
 
   return (
     <div className={styles.signin}>
       <div className={styles.box_login}>
         <h1>Fazer Login</h1>
         <Form onSubmit={handleSubmit(onSubmit)}>
+          {errors.api && (
+            <Alert variant="danger">
+              {errors.api.message}
+            </Alert>
+          )}
           <Form.Group
             className="mb-3"
             controlId="email"
@@ -93,4 +117,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default SignIn;

@@ -18,27 +18,22 @@
     position: relative;
     width: 100vw;
 }
-
 .title_container {
     width: 35%;
 }
-
 .title_container a img {
     height: 40px;
     width: 100%;
 }
-
 .user_tools form {
     display: flex;
     justify-content: center;
     margin-bottom: 0.6rem;
     width: 100%;
 }
-
 .user_tools form input {
     outline: none;
 }
-
 .container_nav {
     background: rgba(0, 0, 0, 0.8);
     display: flex;
@@ -52,7 +47,6 @@
     width: 85vw;
     z-index: 9;
 }
-
 .container_nav_welcome {
     align-items: center;
     background: rgba(0, 0, 0, 0.8);
@@ -60,32 +54,26 @@
     justify-content: space-between;
     padding: 0.6rem 1rem;
 }
-
 .btns {
     width: 60%;
 }
-
 .btns a{
     margin-left: 0.2rem;
 }
-
 .reponsive_nav {
     display: flex;
     transform: translate(100%, 0);
     transition: all 100ms ease-in;
 }
-
 .container_nav>:first-child {
     display: flex;
     height: 50px;
 }
-
 .hamburguer {
     background: #141414;
     border: none;
     border-radius: 5px;
 }
-
 .container_nav .user_tools {
     align-items: center;
     display: flex;
@@ -93,47 +81,43 @@
     height: 80%;
     width: 100%;
 }
-
 .container_nav .user_menu {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-
 .container_nav .user_menu img {
     display: none;
 }
-
 .options button {
     background: none;
     border: none;
     color: #fff;
 }
-
 .container_nav .user_tools li {
     list-style: none;
     margin-bottom: 1rem;
     text-align: center;
 }
-
 .container_nav .user_tools ul li a {
     color: #fff;
     font-size: 1rem;
     text-decoration: none;
 }
-
 .container svg {
     fill: purple;
     font-size: 40px;
 }
 
-
 @media only screen and (min-width: 1005px) {
-    .title_container a img {
-        height: 80px;
-        width: 250px;
+    .container{
+        margin: 0;
+        padding: 0;
     }
-
+    .title_container a{
+        text-decoration: none;
+        text-align: center;
+    }
     .container_nav {
         align-items: center;
         display: flex;
@@ -146,12 +130,10 @@
         width: 100%;
         z-index: 1;
     }
-    
     .container_nav_welcome{
         justify-content: space-between;
         width: 100%;
     }
-
     .container_nav .user_tools {
         align-items: center;
         display: flex;
@@ -160,39 +142,50 @@
         margin-top: 0;
         width: 100%;
     }
-
     .user_tools form {
         flex-direction: row;
         margin: 0;
     }
-
+    .user_tools form input[type="search"]{
+        color: #fff;
+        border-top: 1px solid purple;
+        border-left: 1px solid purple;
+        border-bottom: 1px solid purple;
+        border-radius: 4px 0 0 4px;
+        padding: 0.1rem;
+    }
+    .user_tools form button{
+        border: none;
+        border-radius: 0 4px 4px 0;
+        color: purple;
+        outline: none;
+        padding: 0.1em;
+    }
+    .user_tools form button svg{
+        font-size: 1.5rem;
+    }
     .user_tools .options {
         display: flex;
         width: 250px;
     }
-
     .user_tools .options li {
         color: #fff;
         margin-bottom: 0;
         width: 200px;
     }
-
     .user_menu {
         display: flex;
         flex-direction: column;
         width: 50%;
     }
-
     .container_nav .user_menu>:first-child {
         display: flex;
         justify-content: center;
     }
-
     .container_nav .user_menu img {
         cursor: pointer;
         display: block;
     }
-
     .dropdown_menu {
         background-color: rgba(24, 24, 24, 0.85);
         display: flex;
@@ -201,35 +194,28 @@
         top: 120px;
         z-index: 99;
     }
-
     .dropdown_menu.active {
         opacity: 1;
         transform: translateY(0);
         transition: all 500ms ease-in;
         visibility: visible;
     }
-
     .dropdown_menu.inactive {
         opacity: 0;
         visibility: hidden;
     }
-
     .user_menu>:first-child {
         height: 60px;
     }
-
     .user_menu img {
         display: flex;
     }
-
     .hamburguer {
         display: none;
     }
-
     .dropdown_menu_visible {
         display: flex;
     }
-
     .btns {
         align-items: center;
         display: flex;

@@ -61,7 +61,7 @@ const Movie = () => {
         setSinopseVisible(!sinopseVisible);
     }
 
-    if (data.email && data.password) {
+    // if (data.email && data.password) {
         return (
             movie &&
             <div
@@ -133,9 +133,9 @@ const Movie = () => {
         )
     }
 
-    useEffect(() => {
-        navigate('/');
-    }, []);
-}
+    // useEffect(() => {
+    //     navigate('/');
+    // }, []);
+// }
 
 export default Movie

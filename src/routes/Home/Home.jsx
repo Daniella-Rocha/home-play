@@ -32,7 +32,7 @@ const Home = () => {
 
   const topRated = useTmdbData(`/top_rated?api_key=${apiKey}&language=pt-BR`);
 
-  if (data.email && data.password) {
+  // if (data.email && data.token) {
     return (
       <div className={styles.home_container}>
         <HomeBanner />
@@ -61,9 +61,9 @@ const Home = () => {
       </div>
     )
   }
-  useEffect(() => {
-    navigate('/');
-  }, []);
-}
+  // useEffect(() => {
+  //   navigate('/');
+  // }, []);
+// }
 
 export default Home

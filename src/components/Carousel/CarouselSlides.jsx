@@ -22,7 +22,7 @@ const CarouselSlides = ({ movieList }) => {
             {movieList.map(
                 (movie) =>
                     <SwiperSlide key={movie.id}>
-                        <SlideItem key={movie.id} movie={{ ...movie }} />
+                        <SlideItem  movie={{ ...movie }} />
                     </SwiperSlide>
             )
             }
