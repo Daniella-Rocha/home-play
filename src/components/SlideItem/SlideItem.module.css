@@ -1,27 +1,56 @@
 .slide_container {
     align-items: flex-end;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     display: flex;
     height: 100%;
     width: 100%;
 }
+
 .slide_menu {
-    display: flex;
-    gap: 1rem;
+    height: 60%;
     width: 100%;
 }
+
+.slide_menu h5 {
+    display: none;
+}
+
 .play {
     border: none;
     border-radius: 5px;
     background-color: #ccc;
-    padding: 0.15rem;
+    font-size: 1.25rem;
+    margin: 0 0.5rem 0 0;
+    padding: 0.5rem 1rem;
+    width: 3rem;
 }
+
 .play a {
     color: purple;
     text-decoration: none;
 }
 
-@media screen and(min-width: 1025px) {
-    .slide_container .slide_menu div button{
-        background-color: red;
+@media screen and (min-width: 1080px) {
+
+    .slide_menu {
+        padding: 1rem;
+        text-align: center;
+        transform: translateY(100%);
+        transition: all ease-in 0.5s;
+    }
+
+    .slide_menu h5 {
+        color: #f1f1f1;
+        display: block;
+        font-size: 1rem;
+        word-break: keep-all;
+    }
+
+    .slide_container:hover .slide_menu {
+        background-color: rgba(0, 0, 0, 80%);
+        opacity: 1;
+        transform: translateY(-0.1%);
     }
 }

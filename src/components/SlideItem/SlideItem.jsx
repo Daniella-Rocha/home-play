@@ -19,23 +19,13 @@ const SlideItem = ({ movie }) => {
 
     const { title, backdrop_path, id, poster_path } = movie;
 
-    const [isFavMovie, setIsFavMovie] = useState(false);
-
-    const { toggleFavs, favList } = useFavorite();
-
-    const handleFav = (movie) => {
-        toggleFavs(movie);
-    }
-
-    useEffect(() => {
-    }, [favList]);
-
     return (
         <div
             className={styles.slide_container}
             style={{ backgroundImage: `url("https://image.tmdb.org/t/p/w300${poster_path}")` }}
         >
             <div className={styles.slide_menu}>
+                <h5>{title}</h5>
                 <div>
                     <button
                         type="button"
@@ -46,8 +36,6 @@ const SlideItem = ({ movie }) => {
                             <LuMonitorPlay />
                         </Link>
                     </button>
-                </div>
-                <div>
                     <FavoriteButton />
                 </div>
             </div>

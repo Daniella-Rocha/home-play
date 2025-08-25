@@ -3,13 +3,11 @@
     border-radius: 5px;
     background-color: #ccc;
     color: purple;
-    padding: 0.15rem;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
 }
 
 .favorite-button-active{
-    border: none;
-    border-radius: 5px;
     background-color: #ccc;
     color: red;
-    padding: 0.15rem;
 }
