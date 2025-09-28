@@ -1,19 +1,12 @@
-import { useState } from "react";
-
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 import './FavoriteButton.css';
 
-const FavoriteButton = () => {
-    const [isFav, setIsFav] = useState(false);
-
-    const handleClick = () => {
-        setIsFav(!isFav);
-    };
+const FavoriteButton = ({toFavorite, isFav}) => {
 
     return (
         <button
-            onClick={handleClick}
+            onClick={toFavorite}
             className={isFav ? `favorite-button favorite-button-active` : `favorite-button`}
             value={'curtir'}
         >
