@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 
 import './carousel.css';
 
-import SlideItem from '../SlideItem/SlideItem';
+import CardMovie from '../CardMovie/CardMovie';
 
 const CarouselSlides = ({ movieList }) => {
     return (
@@ -20,9 +20,9 @@ const CarouselSlides = ({ movieList }) => {
             className="mySwiper"
         >
             {movieList.map(
-                (movie) =>
-                    <SwiperSlide key={movie.id}>
-                        <SlideItem  movie={{ ...movie }} />
+                (movie, index) =>
+                    <SwiperSlide key={index}>
+                        <CardMovie movie={{ ...movie }} key={movie.id} />
                     </SwiperSlide>
             )
             }
@@ -31,4 +31,4 @@ const CarouselSlides = ({ movieList }) => {
 
 }
 
-export default CarouselSlides
+export default CarouselSlides;
