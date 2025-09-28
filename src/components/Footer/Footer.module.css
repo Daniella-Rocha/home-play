@@ -1,8 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .footer_container {
+    --main-color: #8a2be2;
+
     background: rgba(0, 0, 0, .85);
     display: flex;
     padding: 1rem;
     width: 100%;
+}
+.footer_logo {
+    color: var(--main-color);
 }
 .footer_container ul {
     display: flex;
@@ -10,19 +20,17 @@
     gap: 0.6rem;
 }
 .footer_container ul li {
-    color: #f1f1f1;
     font-size: 0.75rem;
     list-style: none;
 }
 .footer_container ul li a {
     border-bottom: 2px solid transparent;
-    color: #f1f1f1;
+    color: var(--main-color);
     text-decoration: none;
     transition: all 400ms;
 }
-
 .footer_container ul li a:hover {
-    color: purple;
+    color: #f1f1f1;
 }
 
 @media screen and (min-width: 768px) {
