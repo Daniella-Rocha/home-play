@@ -1,30 +1,27 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import { UserFavoritesContext } from '../contexts/userFavorites';
 
 const useFavorites = () => {
-    const [favList, setFavList] = useState(() => {
-        const favMovies = JSON.parse(localStorage.getItem('favorites'));
 
-        return favMovies ? favMovies : [];
-    });
+    const { favoritesList, setFavoritesList } = useContext(UserFavoritesContext);
 
-    const toggleFavs = (newFav) => {
+    const toggleFavorite = (movie) => {
+        const hasFav = favoritesList.some((favMovie) => favMovie.id === movie.id);
 
-        if (favList.some(fav => fav.id === newFav.id)) {
-            const updatedFavs = favList.filter((fav) => fav !== newFav);
-
-            setFavList([...updatedFavs]);
-        } else {
-            setFavList([...favList, { ...newFav }]);
+        if (hasFav) {
+            const updatedList =  favoritesList.filter((favMovie) => favMovie.id !== movie.id);
+            setFavoritesList(updatedList);
+            localStorage.setItem('@favorites', JSON.stringify(updatedList));
+            return;
         }
+        const updateList = [...favoritesList, movie];
+        localStorage.setItem('@favorites', JSON.stringify(updateList));
+        setFavoritesList(updateList);
     }
 
-    useEffect(() => {
-        // localStorage.setItem('favorites', JSON.stringify(favList));
-    }, [favList]);
-
     return {
-        toggleFavs,
-        favList
+        toggleFavorite,
+        favoritesList
     }
 }
 
