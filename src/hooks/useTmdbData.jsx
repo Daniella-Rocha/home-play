@@ -18,4 +18,4 @@ const useTmdData = (endpoint) => {
   return fetchData;
 }
 
-export default useTmdData
+export default useTmdData;

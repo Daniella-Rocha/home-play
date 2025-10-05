@@ -21,14 +21,14 @@ const SignUp = () => {
 
   const onSubmit = (data) => {
     setSignUp({
-      name: data.name,
+      name: data.useName,
       email: data.email,
       password: data.password,
     });
   };
 
   useEffect(() => {
-    if (signUp.email && signUp.password && signUp.name) {
+    if (signUp.email && signUp.password && signUp.useName) {
       localStorage.setItem('userData', JSON.stringify(signUp))
       navigate('/home')
     }

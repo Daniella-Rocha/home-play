@@ -17,6 +17,7 @@ import SignUp from './routes/SignUp/SignUp';
 import Movie from './routes/Movie/Movie';
 import AllGenres from './routes/AllGenres/AllGenres';
 import Profile from './routes/Profile/Profile';
+import Favorites from './routes/Favorites/Favorites';
 import NotFound from './routes/NotFound/NotFound';
 
 import ErrorPage from './components/ErrorPage/ErrorPage';
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         element: <Profile />,
         path: '/profile'
+      },
+      {
+        element: <Favorites />,
+        path: '/favorites'
       },
       {
         element: <NotFound />,

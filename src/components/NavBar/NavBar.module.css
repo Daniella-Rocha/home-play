@@ -1,6 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .container_welcome {
+    --main-background: #4caf50;
+    --secondary-color: #ff9800;
+
+
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--main-background);
     display: flex;
     height: 5rem;
     justify-content: space-between;
@@ -8,9 +18,9 @@
     width: 100vw;
 }
 
-.container{
+.container {
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--main-background);
     display: flex;
     height: 5rem;
     justify-content: space-between;
@@ -40,7 +50,7 @@
 }
 
 .container_nav {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--main-background);
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -65,7 +75,7 @@
     width: 60%;
 }
 
-.btns a{
+.btns a {
     margin-left: 0.2rem;
 }
 
@@ -127,11 +137,15 @@
     font-size: 40px;
 }
 
-
 @media only screen and (min-width: 1005px) {
-    .title_container a img {
-        height: 80px;
-        width: 250px;
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .title_container a {
+        text-decoration: none;
+        text-align: center;
     }
 
     .container_nav {
@@ -146,8 +160,8 @@
         width: 100%;
         z-index: 1;
     }
-    
-    .container_nav_welcome{
+
+    .container_nav_welcome {
         justify-content: space-between;
         width: 100%;
     }
@@ -164,6 +178,27 @@
     .user_tools form {
         flex-direction: row;
         margin: 0;
+    }
+
+    .user_tools form input[type="search"] {
+        color: #fff;
+        border-top: 1px solid purple;
+        border-left: 1px solid purple;
+        border-bottom: 1px solid purple;
+        border-radius: 4px 0 0 4px;
+        padding: 0.1rem;
+    }
+
+    .user_tools form button {
+        border: none;
+        border-radius: 0 4px 4px 0;
+        color: purple;
+        outline: none;
+        padding: 0.1em;
+    }
+
+    .user_tools form button svg {
+        font-size: 1.5rem;
     }
 
     .user_tools .options {

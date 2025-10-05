@@ -12,7 +12,7 @@ const Profile = () => {
 
     const data = useContext(UserDataContext);
     
-    if (data.email && data.password) {
+    // if (data.email && data.password) {
         return (
             <div className={styles.container_profile}>
                 <div className={styles.banner}
@@ -30,9 +30,9 @@ const Profile = () => {
             </div>
         )
     }
-    useEffect(() =>{
-        navigate('/');
-    }, []);
-}
+//     useEffect(() =>{
+//         navigate('/');
+//     }, []);
+// }
 
 export default Profile;

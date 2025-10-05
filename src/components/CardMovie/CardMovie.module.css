@@ -1,0 +1,60 @@
+.slide_container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+}
+
+.slide_menu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 50%;
+    position: relative;
+    top: 220px;
+}
+
+.slide_menu h5 {
+    margin-top: 2rem;
+    display: none;
+}
+
+.play {
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-right: 0.5rem;
+}
+
+.play a {
+    background-color: rgb(44, 44, 44);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.play svg {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 1080px) {
+
+    .slide_menu {
+        text-align: center;
+        transform: translateY(100%);
+        transition: all ease-in 0.5s;
+    }
+
+    .slide_menu h5 {
+        color: #f1f1f1;
+        display: block;
+        font-size: 1rem;
+        word-break: keep-all;
+    }
+
+    .slide_container:hover .slide_menu {
+        background-color: rgba(0, 0, 0, 80%);
+        opacity: 1;
+        transform: translateY(-0.1%);
+    }
+}
