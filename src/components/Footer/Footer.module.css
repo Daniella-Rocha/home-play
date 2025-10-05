@@ -44,7 +44,8 @@
     .footer_container {
         flex-direction: row;
     }
-    .footer_container ul{
+
+    .footer_container ul {
         padding: 1rem;
     }
 }
